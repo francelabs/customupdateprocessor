@@ -50,6 +50,7 @@ public class ReplaceUrlUpdateProcessor extends UpdateRequestProcessor {
       doc.addField("url", newUrl);
     }
 
+    // VERY IMPORTANT ! without this line of code any other Update Processor declared AFTER this one in the conf WILL NOT EXECUTE
     super.processAdd(cmd);
   }
 }
